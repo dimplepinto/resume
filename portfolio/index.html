@@ -1,0 +1,2282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    </link>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        :root {
+  --main-bg-color: #E9F4FB;
+  --main-menu-color: #000000;
+  --main-ban-headings-color: #ffffff;
+  --main-Headings-color: #173b6c;
+}
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            /* font-weight: 500 !important; */
+            font-family: 'Poppins', sans-serif !important;
+            color: inherit;
+            margin: 0;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        /* ul {
+            list-style-type: none;
+        } */
+
+        a:hover {
+            text-decoration: none !important;
+
+        }
+
+        .cv-wrapper {
+            font-size: 14px;
+            background-color: #ffffff87;
+        }
+
+        .nav-yellow {
+            background-color: #efe1d6;
+
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+
+        }
+
+        .sidebar {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color:  var(--main-menu-color);
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .sidebar a {
+            display: block;
+            color: rgb(255, 255, 255);
+            padding: 16px;
+            text-decoration: none;
+        }
+
+        .sidebar a.active {
+            background-color: #c7c7c7;
+            color: rgb(0, 0, 0);
+        }
+
+        .sidebar .icon {
+            fill: #ffffff;
+        }
+
+        /* a.icon:hover{
+    fill: #000000;
+} */
+
+        .sidebar a:hover:not(.active) {
+            background-color: #c7c7c7;
+            color: black;
+        }
+
+        div.content {
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 1000px;
+        }
+
+        @media screen and (max-width: 700px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .sidebar a {
+                float: left;
+            }
+
+            div.content {
+                margin-left: 0;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+        }
+
+
+
+
+
+        /* .sidenav {
+            height: 100%;
+            width: 249px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #010c4f;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #ffffff;
+            display: block;
+        }
+
+        .sidenav .icon {
+            fill: #ffffff;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        } */
+
+        .sidenav .icon a :hover {
+            color: #f1f1f1;
+        }
+
+        .main_content {
+            background-color: #000000;
+            padding-left: 200px;
+            width: 100%;
+            padding-top: 0 !important;
+            /* transition: .5s; */
+            /* position: relative; */
+            min-height: 100vh;
+            /* padding-bottom: 90px; */
+            overflow: hidden;
+        }
+
+        .img-bg {
+            background-image: url(images/IMG-2116\ copy.jpg);
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 56px;
+            color: var(--main-ban-headings-color);
+            margin: 14px 0;
+        }
+
+        .hero h2 {
+            color: var(--main-ban-headings-color);
+            margin: 14px 0;
+        }
+
+        .hero span {
+            background-color: #fff;
+            color: #363636;
+            padding: 10px 20px;
+            border-radius: 10px 0px 10px 10px;
+        }
+
+        /* abt */
+        .section-title h2 {
+            font-size: 30px;
+            font-weight: bold;
+      color: var(--main-Headings-color); 
+            position: relative;
+            margin-bottom: 33px;
+
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            background-color: #173b6c;
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #149ddd;
+            bottom: 0;
+            left: 0;
+        }
+
+        #abt h3 {
+            font-weight: 500;
+            font-size: 26px;
+        }
+
+        #abt ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        #abt strong span {
+            font-size: 16px;
+            color: #023b6d;
+        }
+
+        #abt .icon {
+            width: 25px;
+            margin-right: 5px;
+            fill: #149ddd;
+            line-height: 0;
+        }
+
+        /* card */
+
+        .expertise {
+            background-color: #BAD0E4;
+        }
+
+        .expertise .icon1 {
+            width: 63px !important;
+            height: 63px;
+
+
+        }
+
+        .expertise h5 {
+            color: #000000;
+            margin-top: 21px;
+
+        }
+
+        /* skill */
+        .skills .progress {
+            height: 60px;
+            display: block;
+            background: none;
+            border-radius: 0;
+        }
+
+        .animated-progress {
+            width: 342px;
+            height: 24px;
+            border-radius: 5px;
+            /* margin: 20px 10px; */
+            border: 1px solid rgb(189, 113, 113);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .animated-progress span {
+            height: 100%;
+            display: block;
+            width: 0;
+            color: rgb(255, 251, 251);
+            line-height: 20px;
+            position: absolute;
+            text-align: end;
+            padding-right: 10px;
+        }
+
+        .progress-blue span {
+            background-color: #149ddd;
+        }
+
+        .progress-green span {
+            background-color: green;
+        }
+
+        .progress-purple span {
+            background-color: indigo;
+        }
+
+        .progress-red span {
+            background-color: red;
+        }
+
+        /* portfolio */
+        ul#pills-tab {
+            border-bottom: 1px solid #b9b8b8;
+        }
+
+        .nav-pills .nav-link.active,
+        .nav-pills .show>.nav-link {
+            color: #000;
+            background-color: 2px solid;
+            border-bottom: 4px solid #149ddd;
+            background-color: unset;
+            border-radius: 0px;
+        }
+
+        .bg-blue {
+            background-color: var(--main-bg-color);
+        }
+
+        /* card */
+        .img-port {
+            position: relative;
+            /* width: 50%; */
+        }
+
+        .img-one {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: 5s ease;
+            backface-visibility: hidden;
+
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .img-port:hover .img-one {
+            opacity: 0.3;
+        }
+
+        .img-port:hover .middle {
+            opacity: 1;
+        }
+
+        .text1 {
+            background-color: #00000099;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+            width: 351px;
+            height: 204px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text2 {
+            background-color: #00000099;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+            width: 350px;
+            height: 349px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text3 {
+            background-color: #00000099;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+            width: 352px;
+            height: 166px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img-hght {
+            height: 500px;
+
+        }
+        
+        .img-hght2 {
+            height: 308px;
+
+        }
+
+        .text4 {
+            background-color: #00000099;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+            width: 255px;
+            height: 310px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .text5 {
+            background-color: #00000099;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+            width: 255px;
+            height: 310px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-light1 {
+            color: #ffffff;
+            /* background-color: #f8f9fa; */
+            border-color: #f8f9fa;
+            border: 6px solid;
+            padding: 8px 30px;
+        }
+
+        .btn-light1:hover {
+            color: #000000;
+            border-color: #f8f9fa;
+            background-color: #f8f9fa;
+            padding: 8px 30px;
+        }
+        /* resume */
+        #resume h4{
+            font-size: 18px;
+            line-height: 23px;
+        }
+        .resume-item ul {
+    padding-left: 17px;
+}
+.resume-item i{
+    font-size: 12px;
+}
+      .resume-item::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    left: -9px;
+    top: 1px;
+    background: #fff;
+    border: 2px dashed #1f5297;
+}
+ .resume-item {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px dashed #1f5297;
+    position: relative;
+}
+
+
+
+body{margin:0;}
+#rotating-section{ 
+				position:relative;
+				background:#1CB0EC  top center no-repeat fixed;
+				height:713px;
+				overflow:hidden;
+				}
+.rect1,.rect2,.rect3,.rect4{
+		position:absolute;
+		width:100px;
+		height:100px;
+		bottom:-150px;
+		background:#fff;
+		-webkit-animation: mymove2 4s linear infinite;
+}
+
+.rect1{left:50%;}
+.rect2{left:10%;-webkit-animation-delay:0.3s;}
+.rect3{left:25%;-webkit-animation-delay:2s;}
+.rect4{left:85%;-webkit-animation-delay:1s;}
+
+
+.rect5,.rect6,.rect7,.rect8{
+		position:absolute;
+		width:50px;
+		height:50px;
+		background:#f72585;
+		bottom:-150px;
+		-webkit-animation: mymove2 4s linear infinite;	
+}
+
+.rect5{left:0%;}
+.rect6{left:15%;-webkit-animation-delay:2.2s;}
+.rect7{left:45%;-webkit-animation-delay:0.8s;}
+.rect8{left:77%;-webkit-animation-delay:1.4s;}
+
+
+.rect9,.rect10{
+		position:absolute;
+		width:300px;
+		height:300px;
+		background:#7209b7;
+		bottom:-250px;
+		border-radius:50%;
+		-webkit-animation: mymove3 5s linear infinite;	
+}
+
+.rect9{left:3%;}
+.rect10{left:95%;-webkit-animation-delay:0s;}
+
+.rect13,.rect14{
+		position:absolute;
+		width:0px;
+		height:0px;
+		border:solid 40px transparent;
+		border-bottom:solid 40px #fff;
+		bottom:-150px;
+		-webkit-animation: mymove4 4s linear infinite;
+}
+
+
+.rect13{left:45%;border-bottom:solid 65px #fff;-webkit-animation-delay:0.6s;}
+.rect14{left:72%;border-bottom:solid 120px #fff;-webkit-animation:mymove5 6s liner infinte;-webkit-animation-delay:1s;}
+
+
+.rect11,.rect12{
+		position:absolute;
+		width:0px;
+		height:0px;
+		border:solid 40px transparent;
+		border-bottom:solid 40px #3a0ca3;
+		bottom:-150px;
+		-webkit-animation: mymove5 4s linear infinite;
+}
+
+.rect11{left:30%;}
+.rect12{left:65%;border-bottom:solid 60px #fff;-webkit-animation-delay:1.3s;}
+
+.rect15{
+		position:absolute;
+		width:300px;
+		height:300px;
+		background:#4361ee;
+		bottom:-400px;
+		-webkit-animation: mymove3 6s linear infinite;
+}
+
+.rect15{left:55%;}
+
+
+.rect17{
+		position:absolute;
+		width:150px;
+		height:150px;
+		background:#fff;
+		bottom:-400px;
+	}
+
+@-webkit-keyframes mymove2{
+	
+	0%{	transform:rortate(0deg);opacity:1;}
+	100%{transform:rotate(540deg);opacity:0;bottom:340px;}
+	}
+
+@-webkit-keyframes mymove3{
+	
+	0%{	transform:rortate(0deg);opacity:1;}
+	100%{transform:rotate(720deg);opacity:0;bottom:540px;}
+	}
+
+@-webkit-keyframes mymove4{	
+	0%{	transform:rortate(0deg);opacity:1;}
+	100%{transform:rotate(720deg);opacity:0;bottom:540px;}
+	}
+
+@-webkit-keyframes mymove5{	
+	0%{	opacity:1;}
+	100%{opacity:0;bottom:540px;}
+	}
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <div class="cv-wrapper">
+        <div class="sidebar">
+            <a href="#hero" class="active"> <i class="fa fa-fw fa-home mr-3"></i>Home</a>
+            <a href="#abt">
+                <i class="fa fa-user mr-3"></i>About me</a>
+            <a href="#Resume"><i class="fa fa-briefcase mr-3"></i>Resume</a>
+            <a href="#portfolio"><i class="fa fa-fw fa-home mr-3"></i>Portfolio</a>
+            <!-- <a href="#contact me"><i class="fa fa-fw fa-home"></i>Contact me</a> -->
+        </div>
+
+
+
+
+        <!-- <div class="sidenav">
+            <a href="#hero"> <svg class="icon ">
+                    <use xlink:href="images/sprite.svg#noun-home-5452506">
+                    </use>
+                </svg>Home</a>
+            <a href="#abt">
+                <svg class="icon ">
+                    <use xlink:href="images/sprite.svg#noun-profile-3465351">
+                    </use>
+                </svg>About me</a>
+            <a href="#clients"><svg class="icon ">
+                    <use xlink:href="images/sprite.svg#noun-profile-3465351">
+                    </use>
+                </svg>Clients</a>
+            <a href="#portfolio"><svg class="icon ">
+                    <use xlink:href="images/sprite.svg#noun-profile-3465351">
+                    </use>
+                </svg>Portfolio</a>
+            <a href="#contact me"><svg class="icon ">
+                    <use xlink:href="images/sprite.svg#noun-profile-3465351">
+                    </use>
+                </svg>Contact me</a>
+        </div> -->
+        <div class="main_content">
+            <section id="rotating-section" class="img-bg d-flex flex-column justify-content-center align-items-center hero">
+                <div id="rotating-animation">
+                    <div>
+                        <div class="rect1"></div>
+                        <div class="rect2"></div>
+                        <div class="rect3"></div>
+                        <div class="rect4t"></div>
+                        <div class="rect5"></div>
+                        <div class="rect6"></div>
+                        <div class="rect7"></div>
+                        <div class="rect8"></div>
+                        <div class="rect9"></div>
+                        <div class="rect10"></div>
+                        <div class="rect11"></div>
+                        <div class="rect12"></div>
+                        <div class="rect13"></div>
+                        <div class="rect14"></div>
+                        <div class="rect15"></div>
+                        <div class="rect16"></div>
+                        <div class="rect17"></div>
+                        <div class="rect18"></div>
+                        <div class="rect19"></div>
+                        <div class="rect20"></div>
+                        <div class="col-12">
+                            <div class="text-left align-content-center">
+                                <h1>Hello</h1>
+                                <h2 class="display-5 mb-3">I'm DIMPLE SMITHA PINTO.</h2>
+                                <span class="bg-text">Software Development Engineer - UI UX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- <section class="img-bg d-flex flex-column justify-content-center align-items-center" id="hero">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="text-left align-content-center">
+                                <h1>Hello</h1>
+                                <h2 class="display-5 mb-3">I'm DIMPLE SMITHA PINTO.</h2>
+                                <span class="bg-text">Software Development Engineer - UI UX</span>
+                            </div>
+                        </div>
+                    </div>
+            </section> -->
+            <section id="abt" class="bg-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 my-5">
+                            <div class="section-title">
+                                <h2>About me</h2>
+                                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
+                                    quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui
+                                    impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
+                                </p>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <img src="images/smitha.jpg" class="img-fluid">
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="mt-3">
+                                            <h3>Software Development Engineer - UI UX</h3>
+                                            <p class="fst-italic">Magnam dolores commodi suscipit. Necessitatibus eius
+                                                consequatur ex aliquid fuga eum quidem. Sit sint consecte</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <ul class="list-group p-0">
+                                                    <li>
+                                                        <svg class="icon ">
+                                                            <use xlink:href="images/sprite.svg#noun-tick-3532083">
+                                                            </use>
+                                                        </svg>
+                                                        <strong class="mr-2">
+                                                            Birthday:</strong>
+                                                        <span>25 March 1992</span>
+
+                                                    </li>
+                                                    <li>
+                                                        <svg class="icon ">
+                                                            <use xlink:href="images/sprite.svg#noun-tick-3532083">
+                                                            </use>
+                                                        </svg>
+                                                        <strong class="mr-2">
+                                                            Email:</strong>
+                                                        <span>smithapinto92@gmail.com</span>
+
+                                                    </li>
+                                                    <li>
+                                                        <svg class="icon ">
+                                                            <use xlink:href="images/sprite.svg#noun-tick-3532083">
+                                                            </use>
+                                                        </svg>
+                                                        <strong class="mr-2">
+                                                            Phone:</strong>
+                                                        <span>7975006592</span>
+
+                                                    </li>
+                                                    <li>
+                                                        <svg class="icon ">
+                                                            <use xlink:href="images/sprite.svg#noun-tick-3532083">
+                                                            </use>
+                                                        </svg>
+                                                        <strong class="mr-2">
+                                                            City:</strong>
+                                                        <span>Manglore</span>
+
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-6">
+                                                <ul class="list-group">
+                                                    <li>
+                                                        <svg class="icon ">
+                                                            <use xlink:href="images/sprite.svg#noun-tick-3532083">
+                                                            </use>
+                                                        </svg>
+                                                        <strong class="mr-2">
+                                                            Age:</strong>
+                                                        <span>30</span>
+
+                                                    </li>
+                                                    <li>
+                                                        <svg class="icon ">
+                                                            <use xlink:href="images/sprite.svg#noun-tick-3532083">
+                                                            </use>
+                                                        </svg>
+                                                        <strong class="mr-2">
+                                                            Degree:</strong>
+                                                        <span>Diploma</span>
+
+                                                    </li>
+                                                    <li>
+                                                        <svg class="icon ">
+                                                            <use xlink:href="images/sprite.svg#noun-tick-3532083">
+                                                            </use>
+                                                        </svg>
+                                                        <strong class="mr-2">
+                                                            Phone:</strong>
+                                                        <span>7975006592</span>
+
+                                                    </li>
+                                                    <li>
+                                                        <svg class="icon ">
+                                                            <use xlink:href="images/sprite.svg#noun-tick-3532083">
+                                                            </use>
+                                                        </svg>
+                                                        <strong class="mr-2">
+                                                            Language:</strong>
+                                                        <span>English , Hindi , Kannada, Konkani</span>
+
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- skill -->
+                                        <div class="col-12">
+                                            <div class="section-title">
+                                                <h2>skill</h2>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+
+                                                    <span class="py-1">HTML</span>
+                                                    <div class="animated-progress progress-blue">
+                                                        <span data-progress="70"></span>
+                                                    </div>
+                                                    <!-- css -->
+                                                    <span>CSS</span>
+                                                    <div class="animated-progress progress-blue">
+                                                        <span data-progress="60"></span>
+                                                    </div>
+                                                    <!-- bootstrap -->
+                                                    <span>Bootsrap</span>
+                                                    <div class="animated-progress progress-blue">
+                                                        <span data-progress="70"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+
+                                                    <span>Photoshop</span>
+                                                    <div class="animated-progress progress-blue">
+                                                        <span data-progress="90"></span>
+                                                    </div>
+                                                    <!-- illus -->
+                                                    <span>Illustrtor</span>
+                                                    <div class="animated-progress progress-blue">
+                                                        <span data-progress="70"></span>
+                                                    </div>
+                                                    <!-- xd -->
+                                                    <span>XD</span>
+                                                    <div class="animated-progress progress-blue">
+                                                        <span data-progress="80"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </section>
+            <!-- resume -->
+            <section class="bg-light" id="Resume">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 my-5 p-0">
+                            <div class="section-title">
+                                <h2>Resume</h2>
+
+                            </div>
+                            <div class="row">
+                            <div class="col-lg-6">
+                                <!-- <h3>MResult Services / Jul 2020 – Present</h3> -->
+                                <div class="resume-item">
+                                    <h4>Education</h4>
+                                    <ul>
+                                     <li>ST GEROSA SCHOOL MANGALORE / 2008 (SSLC)</li>
+                                     <li>INSTITUTE OF BASIC AND VOCATIONALM EDUCATION / 2010
+                                       (PUC)</li>
+                                         <li>STYLUS ANIMATION COLLEGE / 2011
+                                           (DIPLOMA IN ANIMATION) </li>
+                                             <li>DHRISTHI SCHOOL OF PHOTOGRAPHY / 2018.</li>
+                                 </div>
+                                <div class="resume-item">
+                                   <h4>MResult Services / Jul 2020 – Present</h4>
+                                   <ul>
+                                    <li>Collaborate with product management and engineering team.</li>
+                                    <li>Propose and sketch out a range of visual concepts both on paper and using 
+                                        software applications.</li>
+                                        <li>software applications.
+                                            Work collaboratively with other designers, product design and development 
+                                            teams, and project managers..</li>
+                                            <li>Identify areas for improvement</li>
+                                            <li>Redesign websites to make them more responsive.</li>
+                                            <li>Keep up to date with technological innovations and new tool.</li>
+                                            <li>Developing design briefs that suit the client's purpose.</li>
+                                            <li>Thinking creatively to produce new ideas and concepts.</li>
+                                            <li>Mockup implementing in HTML, BOOTSTRAP , CSS </li>
+                                
+                                </div>
+                                <div class="resume-item">
+                                    <h4>Freelance / 2015-2020</h4>
+                                    <ul>
+                                     <li>Keep up to date with technological innovations and new tools.</li>
+                                     <li>Developing design briefs that suit the client's purpose.</li>
+                                         <li>Thinking creatively to produce new ideas and concepts.</li>
+                                             <li>Developing concepts, graphics, and layouts for product illustrations, company 
+                                                logos.</li>
+                                 </div>
+                              
+                            </div>
+                            <!-- col-6 -->
+                            <div class="col-lg-6">
+                                <!-- <h3>MResult Services / Jul 2020 – Present</h3> -->
+                                <div class="resume-item">
+                                   <h4>Photographer / 2018-2020</h4>
+                                   <ul>
+                                    <li>studied & worked under the Dhristhi school of phtography</li>
+                                    <li>Worked as Assistant wedding phtographer with Kameron studio of photography
+                                        Monitored setup & Teardown of Equipment</li>
+                                        <li>Worked for couple Pre- Wedding Shoots along with Nameing ceremony & 
+                                            Birthday shoots</li>
+                                            <li>Undertook Model shoots in mangalore</li>
+                                            <li>Assisted photographer to capture live event (Theyyam Rituals)</li>
+                                            <li>Use Digital & film cameras along with tripod, lenses, flash attachment to create 
+                                                innovative lighting effects</li>
+                                            <li>Taken high quality pictures of couples, childrens,pets , nature then retouching 
+                                                and color correction using adobe software and camera row.</li>
+                                            <li>Photo manipulation how clients require</li>
+                                          
+                                
+                                </div>
+                                <div class="resume-item">
+                                    <h4>SOURCEPAGE TECHNOLOGIES / 2013-2014</h4>
+                                    <ul>
+                                     <li>Keep up to date with technological innovations and new tools.</li>
+                                     <li>Developing design briefs that suit the client's purpose.</li>
+                                         <li>Thinking creatively to produce new ideas and concepts.</li>
+                                             <li>Developing concepts, graphics, and layouts for product illustrations, company 
+                                                logos.</li>
+                                 </div>
+                                 <div class="resume-item">
+                                    <h4>Freelance / 2015-2020</h4>
+                                    <ul>
+                                     <li>Keep up to date with technological innovations and new tools</li>
+                                     <li>Developing design briefs that suit the client's purpose.
+                                        Thinking creatively to produce new ideas and concepts</li>
+                                         <li>Developing concepts, graphics, and layouts for product illustrations, company 
+                                            logos.</li>
+                                             <li>Website mockup design</li>
+                                             <li>Creatives for Social Media</li>
+                                 </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- portfolio -->
+            <section class="bg-blue" id="portfolio">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 my-5">
+                            <div class="section-title">
+                                <h2>Portfolio</h2>
+                            </div>
+                            <div class="col-12 p-0">
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="pills-offerp-tab" data-toggle="pill"
+                                            rel="hover-shadow" href="#pills-offerp" role="tab"
+                                            aria-controls="pills-offerp" aria-selected="true">Offer poster</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-smp-tab" data-toggle="pill" href="#pills-smp"
+                                            role="tab" aria-controls="pills-smp" aria-selected="false">Social Media
+                                            Poster</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-ob-tab" data-toggle="pill" href="#pills-ob"
+                                            role="tab" aria-controls="pills-ob" aria-selected="false">Offer Banners</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-email-tab" data-toggle="pill" href="#pills-email"
+                                            role="tab" aria-controls="pills-email" aria-selected="false">Emailers</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-wm-tab" data-toggle="pill" href="#pills-wm"
+                                            role="tab" aria-controls="pills-wm" aria-selected="false">Webpage Mockups</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-logo-tab" data-toggle="pill" href="#pills-logo"
+                                            role="tab" aria-controls="pills-logo" aria-selected="false">Logo</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-offerp" role="tabpanel"
+                                    aria-labelledby="pills-offerp-tab">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/just-herb copy.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text1 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">Just
+                                                                    Offer poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/just-herb copy.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/pizza.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text1 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter1"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter1" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">Offer poster
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/pizza.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/juicy-chem copy.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text1 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter2"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter2" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">Offer poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/juicy-chem copy.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/bella-vitta copy.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text1 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter3"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter3" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">Offer poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/bella-vitta copy.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/hidesign copy.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text1 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter4"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter4" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Offer poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/hidesign copy.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/1mg copy.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text1 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter5"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter5" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle"> Offer poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/1mg copy.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/bodywise copy.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text1 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter6"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter6" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Offer poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/bodywise copy.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/bare-anatomy copy.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text1 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter7"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter7" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">Bare
+                                                                    Offer poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/bare-anatomy copy.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/shoperstop copy.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text1 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter8"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter8" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Offer poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/shoperstop copy.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- tab -->
+                                <div class="tab-pane fade" id="pills-smp" role="tabpanel"
+                                    aria-labelledby="pills-smp-tab">
+                                    <div class="row">
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/asics.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text2 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter9"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter9" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Social Media Poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/asics.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/ajio.jpg" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text2 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter10"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter10" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Social Media Poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/ajio.jpg" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/ixigo.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text2 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter11"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter11" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Social Media Poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/ixigo.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/timeprimr.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text2 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter9"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter9" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Social Media Poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/timeprimr.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/mothercare.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text2 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter12"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter12" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Social Media Poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/mothercare.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/phy.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text2 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter13"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter13" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Social Media Poster</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/phy.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-ob" role="tabpanel" aria-labelledby="pills-ob-tab">
+                                    <div class="row">
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/ajio.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text3 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter14"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter14" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Offer Banners
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/ajio.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/puma-giftcard.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text3 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter15"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter15" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Offer Banners</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/puma-giftcard.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/wow.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text3 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter15"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter15" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Offer Banners</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/wow.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/mamasearth.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text3 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter15"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter15" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Offer Banners</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/mamasearth.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/1.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text3 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter16"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter16" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Offer Banners</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/1.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/caffine.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text3 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter17"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter17" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Offer Banners</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/caffine.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/cadbury.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text3 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter18"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter18" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Offer Banners</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images//cadbury.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/fnp.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text3 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter19"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter19" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Offer Banners</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/fnp.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-4 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/mc.png" class="w-100">
+                                                <div class="middle">
+                                                    <a class="text3 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter20"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter20" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Offer Banners</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/mc.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- email -->
+                                <div class="tab-pane fade" id="pills-email" role="tabpanel"
+                                    aria-labelledby="pills-email-tab">
+                                    <div class="row">
+                                        <!-- col -->
+                                        <div class="col-lg-3 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/giftcard.png" class="w-100 img-hght2">
+                                                <div class="middle">
+                                                    <a class="text4 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter21"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter21" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                   Emailer</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/giftcard.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-3 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/cashbook-passbook.png" class="w-100 img-hght2">
+                                                <div class="middle">
+                                                    <a class="text4 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter22"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter22" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Emailer</h5>
+                                                              
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/cashbook-passbook.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-3 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/sign-up1.png" class="w-100 img-hght2">
+                                                <div class="middle">
+                                                    <a class="text4" href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter23"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter23" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Emailer</h5>
+                                                                
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/sign-up1.png" class="w-100 ">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- col -->
+                                        <div class="col-lg-3 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/product-lunch.png" class="w-100 img-hght2">
+                                                <div class="middle">
+                                                    <a class="text4" href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter24"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter24" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                    Emailer</h5>
+                                                                
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/product-lunch.png" class="w-100 ">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    <!-- webmocup  -->
+                                    <div class="tab-pane fade" id="pills-wm" role="tabpanel"
+                                    aria-labelledby="pills-wm-tab">
+                                    <div class="row">
+                                        <!-- col -->
+                                        <div class="col-lg-3 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/cqms – 2.png" class="w-100 img-hght2">
+                                                <div class="middle">
+                                                    <a class="text5 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter25"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter25" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                  Web Mockup</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/cqms – 2.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                           <!-- col -->
+                                           <div class="col-lg-3 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/CDOCS – Home – 3.png" class="w-100 img-hght2">
+                                                <div class="middle">
+                                                    <a class="text5 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter26"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter26" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                  Web Mockup</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/CDOCS – Home – 3.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                           <!-- col -->
+                                           <div class="col-lg-3 col-md-6 mt-3">
+                                            <div class="img-port">
+                                                <img src="images/amgen1.png" class="w-100 img-hght2">
+                                                <div class="middle">
+                                                    <a class="text5 " href="#" data-toggle="modal"
+                                                        data-target="#exampleModalCenter27"><button type="button"
+                                                            class="btn btn-light1">View</button></a>
+                                                </div>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModalCenter27" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                        role="document">
+                                                        <div class="modal-content ">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                  Web Mockup</h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img src="images/amgen1.png" class="w-100">
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                             <!-- col -->
+                                             <div class="col-lg-3 col-md-6 mt-3">
+                                                <div class="img-port">
+                                                    <img src="images/elmac.png" class="w-100 img-hght2">
+                                                    <div class="middle">
+                                                        <a class="text5 " href="#" data-toggle="modal"
+                                                            data-target="#exampleModalCenter28"><button type="button"
+                                                                class="btn btn-light1">View</button></a>
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModalCenter28" tabindex="-1"
+                                                        role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                            role="document">
+                                                            <div class="modal-content ">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                      Web Mockup</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal"
+                                                                        aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <img src="images/elmac.png" class="w-100">
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                 <!-- col -->
+                                                 <div class="col-lg-3 col-md-6 mt-3">
+                                                    <div class="img-port">
+                                                        <img src="images/Web 1920 – 1.png" class="w-100 img-hght2">
+                                                        <div class="middle">
+                                                            <a class="text5 " href="#" data-toggle="modal"
+                                                                data-target="#exampleModalCenter29"><button type="button"
+                                                                    class="btn btn-light1">View</button></a>
+                                                        </div>
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="exampleModalCenter29" tabindex="-1"
+                                                            role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                                role="document">
+                                                                <div class="modal-content ">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                          Web Mockup</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                            aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <img src="images/Web 1920 – 1.png" class="w-100">
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Close</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                   <!-- col -->
+                                                   <div class="col-lg-3 col-md-6 mt-3">
+                                                    <div class="img-port">
+                                                        <img src="images/amgen-dashboard.png" class="w-100 img-hght2">
+                                                        <div class="middle">
+                                                            <a class="text5 " href="#" data-toggle="modal"
+                                                                data-target="#exampleModalCenter30"><button type="button"
+                                                                    class="btn btn-light1">View</button></a>
+                                                        </div>
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="exampleModalCenter30" tabindex="-1"
+                                                            role="dialog" aria-labelledby="exampleModalCenterTitle"
+                                                            aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered  modal-lg"
+                                                                role="document">
+                                                                <div class="modal-content ">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLongTitle">
+                                                                          Web Mockup</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                            aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <img src="images/amgen-dashboard.png" class="w-100">
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Close</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                    
+                                    
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            <!-- <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title">
+                                <h2>Contact </h2>
+                            </div>
+                            <div class="d-flex">
+                                <p></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+
+        </div>
+
+
+
+    </div>
+    <script>
+        $(".animated-progress span").each(function () {
+            $(this).animate(
+                {
+                    width: $(this).attr("data-progress") + "%",
+                },
+                1000
+            );
+            $(this).text($(this).attr("data-progress") + "%");
+        });
+    </script>
+</body>
+
+</html>
